@@ -60,24 +60,28 @@ const updateRope = (index: number) => {
   }
   const head = rope[index - 1];
   const tail = rope[index];
+
   const delta = { x: head.x - tail.x, y: head.y - tail.y };
   if (Math.abs(delta.x) <= 1 && Math.abs(delta.y) <= 1) {
     console.log("no need to update tail", { delta });
     return;
   } else if (delta.x === 0) {
+    // 2 steps in y direction
     if (Math.abs(delta.y) === 2) {
       tail.y += Math.sign(delta.y);
     }
   } else if (delta.y === 0) {
+    // 2 steps in x direction
     if (Math.abs(delta.x) === 2) {
       tail.x += Math.sign(delta.x);
     }
   } else {
+    // Off by 2,1 so move diagonally closer
     tail.x += Math.sign(delta.x);
     tail.y += Math.sign(delta.y);
   }
 
-  console.log("updated tail", { tail });
+  // console.log("updated tail", { tail });
 
   if (index === rope.length - 1) {
     tailPoints.push({ ...tail });
