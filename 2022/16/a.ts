@@ -115,7 +115,7 @@ function run(valves: Map<string, Valve>, timeLimit: number = 30) {
   const start = valves.get("AA");
 
   // Part A
-  // const x = f(start, Array.from(valves.values()), timeLimit);
+  // const x = f(start, timeLimit);
   // console.log(x);
 
   // Part B

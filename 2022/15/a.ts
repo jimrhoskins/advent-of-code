@@ -78,14 +78,6 @@ class Reading {
   }
 }
 
-function parsePoint(input: string): Point {
-  const [x, y] = input
-    .slice(input.indexOf("=") + 1)
-    .split(",")
-    .map((s) => parseInt(s));
-  return { x, y };
-}
-
 function xRangesCoveredAtY(
   readings: Reading[],
   y: number,
